@@ -1,0 +1,97 @@
+/* General styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container for the dashboard */
+.dashboard {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    flex: 1;
+}
+
+/* Styling for the header */
+.dashboard h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2.5em;
+    font-weight: bold;
+    position: relative;
+}
+
+.dashboard h2::before,
+.dashboard h2::after {
+    content: '🚀';
+    font-size: 1.2em;
+    position: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dashboard h2::before {
+    left: -30px;
+}
+
+.dashboard h2::after {
+    right: -30px;
+}
+
+/* Styling for the table */
+.MuiTable-root {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.MuiTableHead-root {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.MuiTableCell-root {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.MuiTableBody-root .MuiTableRow-root:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.MuiTableBody-root .MuiTableRow-root:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Styling for action buttons */
+.MuiIconButton-root {
+    padding: 8px;
+    margin: 0 5px;
+}
+
+.MuiIconButton-root svg {
+    font-size: 1.2em;
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    font-size: 1.5em;
+    color: #007bff;
+    margin-top: 50px;
+}
+

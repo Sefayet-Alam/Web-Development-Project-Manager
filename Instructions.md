@@ -81,5 +81,5 @@ Material React table:
 React Hook form:
 -> npm install @hookform/resolvers yup
 
-### migration to vite
- 
+### Authentication
+->python manage.py startapp accounts

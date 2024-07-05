@@ -8,6 +8,7 @@ import MySelectField from './forms/MySelectField'
 import AxiosInstance from './Axios'
 import Dayjs from 'dayjs'
 import { useNavigate, useParams } from 'react-router-dom'
+import Navbar from './NavBar'
 
 const Edit = () => {
   const MyParam = useParams()
@@ -17,13 +18,20 @@ const Edit = () => {
   const [loading, setLoading] = useState(true)
 
   const hardcoded_options = [
-    {id:'', name:'None'}, 
-    {id:'Open', name:'Open'}, 
+    {id:'', name:'Not Started'}, 
+    {id:'Proposal made', name:'Proposal made'}, 
+    {id:'Started', name:'Started'}, 
     {id:'In progress', name:'In progress'}, 
     {id:'Completed', name:'Completed'}, 
   ]
 
-
+  const navigate = useNavigate()
+  const defaultValues = {
+    name: '',
+    comments: '',
+    status: '',
+  }
+  const { handleSubmit, setValue, control } = useForm({ defaultValues: defaultValues })
 
   const GetData = () => {
     AxiosInstance.get('ProjectManager').then((res) => {
@@ -32,27 +40,23 @@ const Edit = () => {
       // setLoading(false)
     })
     AxiosInstance.get(`Project/${myId}`).then((res) => {
-      // console.log(res.data)
+      console.log(res.data)
       setValue('name', res.data.name)
-      setValue('projectmanager', res.data.projectmanager)
+      setValue('projectmanager', res.data.projectmanager.id)
       setValue('status', res.data.status)
       setValue('comments', res.data.comments)
       setValue('start_date', Dayjs(res.data.start_date))
       setValue('end_date', Dayjs(res.data.end_date))
+      setValue('student_name', res.data.student_name)
+      setValue('student_roll', res.data.student_roll)
+      setValue('student_contact', res.data.student_contact)
       setLoading(false)
-    })
+    }) 
   }
   useEffect(() => {
     // console.log(res.data)
     GetData();
   },[])
-  const navigate = useNavigate()
-  const defaultValues = {
-    name: '',
-    comments: '',
-    status: '',
-  }
-  const { handleSubmit, setValue, control } = useForm({ defaultValues: defaultValues })
 
   const submission = (data) => {
     // console.log(data);
@@ -65,30 +69,56 @@ const Edit = () => {
       status: data.status,
       comments: data.comments,
       start_date: StartDate,
-      end_date: EndDate
+      end_date: EndDate,
+      student_name:data.student_name,
+      student_roll:data.student_roll,
+      student_contact:data.student_contact
     }
     )
       .then((res) => {
-        navigate(`/`)
+        navigate(`/home`)
       })
   }
   return (
+    <Navbar drawerWidth={220} content={
     <div>
       {loading ? <p>Loading data... </p> :
         <form onSubmit={handleSubmit(submission)}>
 
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', backgroundColor: '#00003f', marginBottom: '10px' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', backgroundColor: '#00003f', marginBottom: '20px' }}>
             <Typography sx={{ marginLeft: '20px', color: '#fff' }}>
-              Create records
+              Edit records....
             </Typography>
 
           </Box>
 
           <Box sx={{ display: 'flex', width: '100%', boxShadow: 3, padding: 4, flexDirection: 'column' }}>
-
+            <Box sx={{ display: 'flex', justifyContent: 'space-around', marginBottom: '40px' }}>
+                <MyTextField
+                label="Student Name"
+                name={"student_name"}
+                control={control}
+                placeholder="Student name"
+                width={'30%'}
+                />
+                <MyTextField
+                label="ID"
+                name={"student_roll"}
+                control={control}
+                placeholder="Roll"
+                width={'30%'}
+                />
+               <MyTextField
+                label="Phone no"
+                name={"student_contact"}
+                control={control}
+                placeholder="Phone no"
+                width={'30%'}
+              />
+            </Box>
             <Box sx={{ display: 'flex', justifyContent: 'space-around', marginBottom: '40px' }}>
               <MyTextField
-                label="Name"
+                label="Project Name"
                 name={"name"}
                 control={control}
                 placeholder="Provide a project name"
@@ -132,7 +162,7 @@ const Edit = () => {
               />
 
               <MySelectField
-                label="Project Manager"
+                label="Course Teacher"
                 name="projectmanager"
                 control={control}
                 width={'30%'}
@@ -151,6 +181,7 @@ const Edit = () => {
         </form>
       }
     </div>
+    }/>
 
   )
 }

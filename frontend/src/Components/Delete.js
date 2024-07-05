@@ -3,7 +3,7 @@ import {React, useEffect, useState} from 'react'
 import { Box, Button, Typography } from '@mui/material'
 import AxiosInstance from './Axios'
 import {useNavigate, useParams} from 'react-router-dom'
-
+import Navbar from './NavBar'
 const Delete = () => {
   const MyParam = useParams()
   const myId = MyParam.id
@@ -27,17 +27,18 @@ const Delete = () => {
   const submission = (data) => {
     // console.log(data);
     AxiosInstance.delete(`Project/${myId}/`).then((res) => {
-      navigate(`/`)
+      navigate(`/home`)
     })
   }
   return (
+    <Navbar drawerWidth={220} content={
     <div>
       {loading ? <p>loading data...</p>
         :
         <div>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', backgroundColor: '#00003f', marginBottom: '10px' }}>
             <Typography sx={{ marginLeft: '20px', color: '#fff' }}>
-              Delete Project: {myData.name}
+              Delete Project: {myData.name} of student: {myData.student_name}
             </Typography>
 
           </Box>
@@ -48,7 +49,7 @@ const Delete = () => {
               Are you sure you want to delete the project:   {myData.name}
             </Box>
             <Box sx={{ width: '100%' }}>
-              <Button variant="contained" onClick={submission} sx={{ width: '30%' }}>
+              <Button variant="outlined" color="error" onClick={submission} sx={{ width: '30%' }}>
                 Delete
               </Button>
             </Box>
@@ -57,6 +58,7 @@ const Delete = () => {
         </div>
       }
     </div>
+    }/>
   )
 }
 

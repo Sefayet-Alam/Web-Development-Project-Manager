@@ -1,8 +1,8 @@
 ### Project Description:
 
-# Project_Manager
+# Web development Course Manager
 
-**Project_Manager** is a web application built with React for the front end and Python with Django for the back end. This application allows users to manage their projects efficiently by providing features to create, update, delete, and search for projects. Each project can have a start date, an end date, a status, and comments. </br>
+**Web development Course Manager** is a web application built with React for the front end and Python with Django for the back end. This application allows users to manage their projects efficiently by providing features to create, update, delete, and search for projects. Each project can have a start date, an end date, a status, and comments. </br>
 
 ## Features
 

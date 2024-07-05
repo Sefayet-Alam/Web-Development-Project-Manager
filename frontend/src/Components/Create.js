@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import dayjs from 'dayjs'
-
+import Navbar from './NavBar'
 
 
 const Create = () => {
@@ -21,8 +21,9 @@ const Create = () => {
 
 
   const hardcoded_options = [
-    {id:'', name:'None'}, 
-    {id:'Open', name:'Open'}, 
+    {id:'', name:'Not Started'}, 
+    {id:'Proposal made', name:'Proposal made'}, 
+    {id:'Started', name:'Started'}, 
     {id:'In progress', name:'In progress'}, 
     {id:'Completed', name:'Completed'}, 
   ]
@@ -64,33 +65,62 @@ const Create = () => {
     const EndDate = Dayjs(data.end_date["$d"]).format("YYYY-MM-DD");
     AxiosInstance.post(
       `Project/`, {
-      name: data.name,
-      projectmanager: data.projectmanager,
-      status: data.status,
-      comments: data.comments,
-      start_date: StartDate,
-      end_date: EndDate
+        name: data.name,
+        projectmanager:data.projectmanager,
+        status: data.status,
+        comments: data.comments,
+        start_date: StartDate,
+        end_date: EndDate,
+        student_name:data.student_name,
+        student_roll:data.student_roll,
+        student_contact:data.student_contact
     }
     )
       .then((res) => {
-        navigate(`/`)
+        navigate(`/home`)
       })
   }
   return (
+    <Navbar drawerWidth={220} content={
     <div>
+      
       {loading ? <p>Loading data</p> :
         <form onSubmit={handleSubmit(submission)}>
 
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', backgroundColor: '#00003f', marginBottom: '10px' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', backgroundColor: '#00003f', marginBottom: '20px' }}>
             <Typography sx={{ marginLeft: '20px', color: '#fff' }}>
-              Create records
+              Create A new Project!
             </Typography>
           </Box>
 
           <Box sx={{ display: 'flex', width: '100%', boxShadow: 3, padding: 4, flexDirection: 'column' }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-around', marginBottom: '40px' }}>
+                <MyTextField
+                label="Student Name"
+                name={"student_name"}
+                control={control}
+                placeholder="Student name"
+                width={'30%'}
+                />
+                <MyTextField
+                label="ID"
+                name={"student_roll"}
+                control={control}
+                placeholder="Roll"
+                width={'30%'}
+                />
+               <MyTextField
+                label="Phone no"
+                name={"student_contact"}
+                control={control}
+                placeholder="Phone no"
+                width={'30%'}
+              />
+            </Box>
+            
             <Box sx={{ display: 'flex', justifyContent: 'space-around', marginBottom: '40px' }}>
               <MyTextField
-                label="Name"
+                label="Project Name"
                 name={"name"}
                 control={control}
                 placeholder="Provide a project name"
@@ -129,7 +159,7 @@ const Create = () => {
                 options={hardcoded_options}
               />
               <MySelectField
-                label="Project manager"
+                label="Course Teacher Name"
                 name="projectmanager"
                 control={control}
                 width={'30%'}
@@ -147,6 +177,7 @@ const Create = () => {
         </form>
       }
     </div>
+    }/>
 
   )
 }

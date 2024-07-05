@@ -1,3 +1,5 @@
+****This instructions include almost all commands I used.If you are cloning and using the repo, see readme.md****
+
 ### Project includes:
 
 -> CRUD application
@@ -83,3 +85,6 @@ React Hook form:
 
 ### Authentication
 ->python manage.py startapp accounts
+
+-> pip install django-allauth
+-> pip install dj-rest-auth

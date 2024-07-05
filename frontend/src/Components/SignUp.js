@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './SignUp.css';  // Add your CSS styling here
+import AxiosInstance from './Axios';
 
 const SignUp = () => {
     const [username, setUsername] = useState('');
@@ -13,9 +14,9 @@ const SignUp = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/signup/', { username, password });
+            const response = await AxiosInstance.post('/accounts/signup/', { username, email , password });
             localStorage.setItem('token', response.data.token);  // Save the token in localStorage
-            navigate('/login');  // Redirect to home page
+            navigate('/home');  // Redirect to home page
         } catch (error) {
             setError('Signup failed');
             console.error('Signup Error:', error);

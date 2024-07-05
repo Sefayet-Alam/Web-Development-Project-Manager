@@ -2,19 +2,23 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';  // Add your CSS styling here
+import AxiosInstance from './Axios';
+import { useAuth } from '../AuthContext';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const { login } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/login/', { username, password });
+            const response = await AxiosInstance.post('/accounts/login/', { username, password });
             localStorage.setItem('token', response.data.token);  // Save the token in localStorage
-            navigate('/');  // Redirect to home page
+            login();  // Update the authentication context
+            navigate('/home');  // Redirect to home page
         } catch (error) {
             setError('Invalid credentials');
             console.error('Login Error:', error);

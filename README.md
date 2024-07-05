@@ -22,7 +22,7 @@
 
 ## Technologies Used
 
-- **Frontend**: React
+- **Frontend**: React, HTML, CSS, Bootstrap
 - **Backend**: Python, Django
 - **Database**: SQLite
 - **Other Tools**: VS Code, Axios

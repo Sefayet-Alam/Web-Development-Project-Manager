@@ -2,14 +2,16 @@
 
 # Web development Course Manager
 
-**Web development Course Manager** is a web application built with React for the front end and Python with Django for the back end. This application allows users to manage their projects efficiently by providing features to create, update, delete, and search for projects. Each project can have a start date, an end date, a status, and comments. </br>
+**Web development Course Manager** is a web application built with React for the front end and Python with Django for the back end. This application allows teachers to manage their students' projects efficiently by providing features to create, update, delete, and search for projects. Each project can have a start date, an end date, a status, and comments. This project also includes authentication. Therefore,only teachers can access and make operations on the records..</br>
 
 ## Features
 
-- **Create Projects**: Add new projects with a title, start date, end date, status, and comments. 
-- **Update Projects**: Modify existing projects to keep them up to date.
+- **Authentication** : Login and Sign Up features are added to make the app secure.
+- **Create Projects**: Add new projects for a student with title, Student name, Student ID, student contact, start date, end date, status, and comments. 
+- **Update Projects**: Modify existing project records to keep them up to date.
 - **Delete Projects**: Remove projects that are no longer needed.
 - **Search Projects**: Easily find projects using the search functionality on the home page.
+
 
 ## Technologies Used
 
@@ -27,9 +29,6 @@
 - Django
 
 
-
-
-
 ### How to initialize:
  Clone the repository:
     ```bash
@@ -41,9 +40,10 @@
     cd  BACKEND
     python -m pip install django
     venv\Scripts\activate 
-    npm install -g npm
     pip install djangorestframework
     pip install django-cors-headers
+    python manage.py makemigrations
+    python manage.py migrate
     python manage.py runserver
   ```
 
@@ -54,6 +54,17 @@
 ->> in another terminal: : </br>
 ```bash
     cd frontend 
+    npm install -g npm
+
+    npm i react-router-dom
+    npm install @mui/material @emotion/react @emotion/styled
+    npm install @mui/material @emotion/react @emotion/styled
+    npm install react-hook-form
+    npm install @mui/x-date-pickers
+    npm install dayjs
+    npm install axios
+    npm install material-react-table
+    npm install @hookform/resolvers yup
     npm start
 ```
     
@@ -77,5 +88,4 @@ email: sefayetalam14@gmail.com
 
 ---
 
-Happy Project Managing!
-Learnt from the youtube channel: https://www.youtube.com/watch?v=Wn8wcz460bw&list=PLmEKHA8iFrmBCo1Guf3xbM1af5p5Ja-fy&index=15 </br>
+Happy Project Managing!</br>

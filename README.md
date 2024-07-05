@@ -15,8 +15,8 @@
 
 - **Frontend**: React
 - **Backend**: Python, Django
-- **Database**: (Specify your database, e.g., PostgreSQL, SQLite)
-- **Other Tools**: (List any other tools or libraries you used)
+- **Database**: SQLite
+- **Other Tools**: VS Code, Axios
 
 ## Installation
 
@@ -25,7 +25,6 @@
 - Node.js
 - Python 3.x
 - Django
--  Read instructions.md ans install all
 
 
 

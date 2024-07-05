@@ -1,5 +1,12 @@
 ### Project Description:
 
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view1.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view2.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view3.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view4.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view5.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view6.png" alt="">
+
 # Web development Course Manager
 
 **Web development Course Manager** is a web application built with React for the front end and Python with Django for the back end. This application allows teachers to manage their students' projects efficiently by providing features to create, update, delete, and search for projects. Each project can have a start date, an end date, a status, and comments. This project also includes authentication. Therefore,only teachers can access and make operations on the records..</br>

@@ -74,7 +74,8 @@
     npm install @hookform/resolvers yup
     npm start
 ```
-    
+
+    - CTRL+C to exit/stop server
 The application should now be running locally. You can access it by navigating to `http://localhost:3000` in your web browser.
 
 ## Usage

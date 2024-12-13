@@ -6,6 +6,13 @@
 <img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view4.png" alt="">
 <img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view5.png" alt="">
 <img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view6.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view7.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view8.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view9.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view10.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view11.png" alt="">
+<img src="https://github.com/Sefayet-Alam/Web_development_Course_Manager/blob/main/view12.png" alt="">
+
 
 # Web development Course Manager
 

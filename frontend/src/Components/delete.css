@@ -1,0 +1,70 @@
+/* delete.css */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f9fc;
+    /* Light grey background */
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00003f;
+    /* Dark blue background for header */
+    padding: 10px 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.header-box h2 {
+    color: #ffffff;
+    /* White text */
+    margin: 0;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    /* White background for content */
+    margin-top: 20px;
+}
+
+.confirmation-message {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.delete-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.delete-button button {
+    width: 30%;
+    /* Set a consistent button width */
+    padding: 10px;
+    background-color: #d9534f;
+    /* Red background for delete button */
+    color: #ffffff;
+    /* White text color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-button button:hover {
+    background-color: #c9302c;
+    /* Darker red on hover */
+}

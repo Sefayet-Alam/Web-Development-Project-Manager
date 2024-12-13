@@ -10,6 +10,15 @@
     background-position: center;
 }
 
+.welcome-message {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+    /* Adjust the margin as needed */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 .login-form {
     background: rgba(255, 255, 255, 0.8);
     padding: 40px;

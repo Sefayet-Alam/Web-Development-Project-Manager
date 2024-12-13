@@ -1,65 +1,63 @@
+import React, { useEffect, useState } from 'react';
+import { Box, Button, Typography } from '@mui/material';
+import AxiosInstance from './Axios';
+import { useNavigate, useParams } from 'react-router-dom';
+import Navbar from './NavBar';
+import './delete.css'; // Import the CSS file for styling
 
-import {React, useEffect, useState} from 'react' 
-import { Box, Button, Typography } from '@mui/material'
-import AxiosInstance from './Axios'
-import {useNavigate, useParams} from 'react-router-dom'
-import Navbar from './NavBar'
 const Delete = () => {
-  const MyParam = useParams()
-  const myId = MyParam.id
-  const [myData, setMyData] = useState()
-  const [loading, setLoading] = useState(true)
+  const MyParam = useParams();
+  const myId = MyParam.id;
+  const [myData, setMyData] = useState();
+  const [loading, setLoading] = useState(true);
+
   const GetData = () => {
     AxiosInstance.get(`Project/${myId}`).then((res) => {
-      // console.log(res.data)
-      setMyData(res.data)
-      // console.log(res.data)
-      setLoading(false)
-    })
-  }
+      setMyData(res.data);
+      setLoading(false);
+    });
+  };
+
   useEffect(() => {
-    // console.log(res.data)
     GetData();
-  }, [])
-  const navigate = useNavigate()
+  }, []);
 
+  const navigate = useNavigate();
 
-  const submission = (data) => {
-    // console.log(data);
-    AxiosInstance.delete(`Project/${myId}/`).then((res) => {
-      navigate(`/home`)
-    })
-  }
+  const submission = () => {
+    AxiosInstance.delete(`Project/${myId}/`).then(() => {
+      navigate(`/home`);
+    });
+  };
+
   return (
     <Navbar drawerWidth={220} content={
-    <div>
-      {loading ? <p>loading data...</p>
-        :
-        <div>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', backgroundColor: '#00003f', marginBottom: '10px' }}>
-            <Typography sx={{ marginLeft: '20px', color: '#fff' }}>
-              Delete Project: {myData.name} of student: {myData.student_name}
-            </Typography>
-
-          </Box>
-
-          <Box sx={{ display: 'flex', width: '100%', boxShadow: 3, padding: 4, flexDirection: 'column' }}>
-
-            <Box sx={{ display: 'flex', justifyContent: 'start', marginBottom: '40px' }}>
-              Are you sure you want to delete the project:   {myData.name}
-            </Box>
-            <Box sx={{ width: '100%' }}>
-              <Button variant="outlined" color="error" onClick={submission} sx={{ width: '30%' }}>
-                Delete
-              </Button>
+      <div className="container">
+        {loading ? (
+          <p>Loading data...</p>
+        ) : (
+          <div>
+            <Box className="header-box">
+              <Typography variant="h2" sx={{ color: '#fff' }}>
+                Delete Project: {myData.name} of student: {myData.student_name}
+              </Typography>
             </Box>
 
-          </Box>
-        </div>
-      }
-    </div>
+            <Box className="content-box">
+              <Typography className="confirmation-message">
+                Are you sure you want to delete the project: {myData.name}?
+              </Typography>
+              <Box sx={{ width: '100%' }}>
+                <Button variant="outlined" color="error" onClick={submission} className="delete-button">
+                  Delete
+                </Button>
+              </Box>
+            </Box>
+          </div>
+        )}
+      </div>
     }/>
-  )
-}
+  );
+};
 
-export default Delete
+export default Delete;

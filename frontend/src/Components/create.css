@@ -1,0 +1,83 @@
+/* create.css */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f9fc;
+    /* Light grey background */
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    /* White background for content */
+}
+
+.form-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.form-section>* {
+    width: 30%;
+    margin: 0 10px;
+}
+
+.form-section>*:first-of-type {
+    margin-left: 0;
+    /* Remove left margin for the first item */
+}
+
+.form-section>*:last-of-type {
+    margin-right: 0;
+    /* Remove right margin for the last item */
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00003f;
+    /* Dark blue header background */
+    padding: 10px 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.form-header h4 {
+    color: #ffffff;
+    /* White header text */
+    margin: 0;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submit-btn>button {
+    width: 100%;
+    /* Full width for the button */
+    padding: 10px;
+    background-color: #0056b3;
+    /* Button background color */
+    color: #ffffff;
+    /* White text color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn>button:hover {
+    background-color: #004094;
+    /* Darken button on hover */
+}

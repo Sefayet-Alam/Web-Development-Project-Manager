@@ -58,6 +58,12 @@
     email: sefayetalam14@gmail.com : </br>
     pass: 12345 : </br>
 
+    OR,
+
+    name: Ruthless_014 : </br>
+    email: sefayetalam14@gmail.com : </br>
+    pass: 12345 : </br>
+
 ->> in another terminal: : </br>
 ```bash
     cd frontend 

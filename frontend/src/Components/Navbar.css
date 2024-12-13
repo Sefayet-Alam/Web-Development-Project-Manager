@@ -1,11 +1,10 @@
 /* Navbar.css */
 
 /* Styling for the AppBar */
-
-
 .app-bar {
     background-color: #2E3B55; /* Dark blue-grey */
     color: white;
+    padding: 0 20px; /* Add some padding for better spacing */
 }
 
 .app-bar-logo {
@@ -29,6 +28,8 @@
 
 .drawer-item {
     margin-bottom: 1rem;
+    padding: 10px 20px; /* Add padding for button like look */
+    border-bottom: 1px solid #6C7476; /* Add a border between items */
 }
 
 .drawer-item a {
@@ -46,7 +47,7 @@
 
 /* Footer */
 .footer {
-    margin-top: 200px;
+    margin-top: 300px;
     background-color: #333; /* Dark grey */
     color: white;
     padding: 10px 0;
@@ -65,7 +66,6 @@
     display: inline-block;
     vertical-align: middle;
 }
-
 
 .footer a img {
     width: 24px;

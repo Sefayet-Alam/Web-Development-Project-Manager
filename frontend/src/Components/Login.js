@@ -30,11 +30,10 @@ const Login = () => {
             console.error('Login Error:', error);
         }
     };
-    
 
     return (
         <div className="login-container">
-            <h2>Login</h2>
+            <h1 className="welcome-message">WELCOME TO PROJECT MANAGER APP!</h1>
             <form onSubmit={handleSubmit} className="login-form">
                 <input
                     type="text"

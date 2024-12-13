@@ -6,10 +6,14 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
 
-    const login = () => setIsAuthenticated(true);
+    const login = (token) => {
+        localStorage.setItem('token', token);  // Save the token to localStorage
+        setIsAuthenticated(true);
+    };
+
     const logout = () => {
+        localStorage.removeItem('token');  // Remove the token from localStorage
         setIsAuthenticated(false);
-        localStorage.removeItem('token');
     };
 
     return (

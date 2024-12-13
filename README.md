@@ -72,6 +72,7 @@
     npm install axios
     npm install material-react-table
     npm install @hookform/resolvers yup
+    npm install react-circular-progressbar
     npm start
 ```
 
@@ -84,9 +85,6 @@ The application should now be running locally. You can access it by navigating t
 - To update or delete a project, click on the respective project from the project list on the home page.
 - Use the search bar on the home page to find specific projects.
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request.
 
 
 ## Contact

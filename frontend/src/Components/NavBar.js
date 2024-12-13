@@ -19,7 +19,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton, Button } from '@mui/material';
 import './Navbar.css';
 import './Home.css';
-import pic from "./logo192.png";
+import pic from "./pics/navbar_pic.png";
 import { useAuth } from '../AuthContext'; // Added import for useAuth
 
 export default function Navbar(props) {
@@ -94,7 +94,11 @@ export default function Navbar(props) {
                             </IconButton>
                             Web Development Project Manager
                         </Typography>
-                        <Button color="inherit" onClick={handleLogout}>Logout</Button> {/* Added Logout Button */}
+                        <Button
+                            color="inherit"
+                            onClick={() => path === '/profile' ? handleLogout() : navigate('/profile')}>
+                            {path === '/profile' ? "Logout" : "Profile"}
+                        </Button> {/* Profile/Logout Button */}
                     </Toolbar>
                 </AppBar>
                 <Drawer
@@ -144,7 +148,7 @@ export default function Navbar(props) {
                 </a>
                 <a href="https://www.linkedin.com/in/sefayet-alam-8333b4242/" target="_blank" rel="noopener noreferrer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-linkedin" viewBox="0 0 16 16">
-                        <path d="M0 1.146C0 .513.324 0 .725 0h14.55c.4 0 .725.513.725 1.146v13.708c0 .633-.324 1.146-.725 1.146H.725a.72.72 0 0 1-.725-1.146V1.146zm4.943 12.248V5.882H3.12v7.512h1.823zm-1.819-8.59c.614 0 1.116-.502 1.116-1.118a1.117 1.117 0 1 0-2.233 0c0 .616.502 1.118 1.116 1.118zm4.674 8.59V8.255c0-.317-.027-.634-.144-.905a2.392 2.392 0 0 0-2.239-1.498c-1.103 0-1.816.74-2.115 1.45-.09.24-.119.553-.119.874v3.918h1.822v-4.18c0-.21.017-.42.082-.606a.957.957 0 0 1 .894-.683c.63 0 .882.482.882 1.189v4.28h1.821zm4.897 0V8.08c0-2.007-1.06-2.943-2.476-2.943-1.143 0-1.66.627-1.953 1.07V5.882h-1.822c.024.56 0 7.512 0 7.512h1.822v-4.2c0-.224.016-.447.08-.634.177-.45.581-.916 1.258-.916.887 0 1.242.692 1.242 1.707v4.043h1.822z" />
+                        <path d="M0 1.146C0 .515.515 0 1.146 0h13.708C15.485 0 16 .515 16 1.146v13.708C16 15.485 15.485 16 14.854 16H1.146C.515 16 0 15.485 0 14.854V1.146zM4.98 13H2.894V5.74h2.086V13zm-.992-7.077c-.654 0-1.18-.525-1.18-1.175 0-.652.526-1.176 1.18-1.176.653 0 1.177.524 1.177 1.176 0 .65-.524 1.175-1.177 1.175zm8.92 7.077h-2.086V9.973c0-1.053-.02-2.415-1.469-2.415-1.469 0-1.7 1.146-1.7 2.33V13h-2.085V5.74h2.085v1.153h.03c.29-.552 1.006-1.132 2.071-1.132 2.211 0 2.614 1.451 2.614 3.34v4.898z" />
                     </svg>
                 </a>
             </footer>

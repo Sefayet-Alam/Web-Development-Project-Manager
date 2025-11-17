@@ -55,6 +55,8 @@
     python -m pip install django
     venv\Scripts\activate 
     pip install djangorestframework
+    pip install django-allauth
+    pip install dj-rest-auth
     pip install django-cors-headers
     python manage.py makemigrations
     python manage.py migrate
